@@ -1,0 +1,4 @@
+module test-bits-r (test)
+
+import bits.test (test)
+import bits-r

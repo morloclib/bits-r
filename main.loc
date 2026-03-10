@@ -1,0 +1,19 @@
+module bits-r (*)
+
+import bits
+import root-r
+
+instance Bits a where
+  source R from "R/bits.R"
+    ( "morloc_and" as (.&.)
+    , "morloc_or" as (.|.)
+    , "morloc_xor" as (.^.)
+    , "morloc_shiftl" as (<<)
+    , "morloc_shiftr" as (>>)
+    , "morloc_bnot" as bnot
+    , "morloc_testBit" as testBit
+    , "morloc_setBit" as setBit
+    , "morloc_clearBit" as clearBit
+    , "morloc_flipBit" as flipBit
+    , "morloc_popcount" as popcount
+    )

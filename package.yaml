@@ -1,0 +1,11 @@
+name: bits-r
+version: 0.1.0
+homepage: https://github.com/morloclib/bits-r
+synopsis: R implementations for bitwise operations
+description: R implementations for bitwise operations
+category: data
+license: MIT
+author: "Zebulun Arendsee"
+maintainer: "z@morloc.io"
+github: https://github.com/morloclib/bits-r
+bug-reports: https://github.com/morloclib/bits-r
