@@ -3,13 +3,22 @@ module bits-r (*)
 import bits
 import root-r
 
-instance Bits a where
-  source R from "R/bits.R"
+-- Note that Int64/UInt64 is NOT defined for R, this is because R doesn't really
+-- have this type. "Integer" values above 32bits are coerced to doubles. And you
+-- aren't twiddling your bits in R anyway, are you?
+instance Bits Int
+       , Bits Int8
+       , Bits Int16
+       , Bits Int32
+       , Bits UInt8
+       , Bits UInt16
+       , Bits UInt32 where
+  %inline source R from "R/bits.R"
     ( "morloc_and" as (.&.)
     , "morloc_or" as (.|.)
     , "morloc_xor" as (.^.)
-    , "morloc_shiftl" as (<<)
-    , "morloc_shiftr" as (>>)
+    , "morloc_shiftl" as shiftl
+    , "morloc_shiftr" as shiftr
     , "morloc_bnot" as bnot
     , "morloc_testBit" as testBit
     , "morloc_setBit" as setBit
