@@ -3,16 +3,16 @@ module bits-r (*)
 import bits
 import root-r
 
--- Note that Int64/UInt64 is NOT defined for R, this is because R doesn't really
+-- Note that I64/U64 is NOT defined for R, this is because R doesn't really
 -- have this type. "Integer" values above 32bits are coerced to doubles. And you
 -- aren't twiddling your bits in R anyway, are you?
 instance Bits Int
-       , Bits Int8
-       , Bits Int16
-       , Bits Int32
-       , Bits UInt8
-       , Bits UInt16
-       , Bits UInt32 where
+       , Bits I8
+       , Bits I16
+       , Bits I32
+       , Bits U8
+       , Bits U16
+       , Bits U32 where
   %inline source R from "R/bits.R"
     ( "morloc_and" as (.&.)
     , "morloc_or" as (.|.)
